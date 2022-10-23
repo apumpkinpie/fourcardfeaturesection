@@ -1,0 +1,220 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* End CSS Reset */
+
+:root {
+    /* ### Primary */
+
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+
+    /* ### Neutral */
+
+    --verydarkblue: hsl(234, 12%, 34%);
+    --grayishblue: hsl(229, 6%, 66%);
+    --verylightgray: hsl(0, 0%, 98%);
+}
+html {
+    font-size: 50%;
+}
+body {
+    /* font-size: 1.5rem; */
+    font-family: "Poppins", sans-serif;
+    background-color: var(--verylightgray);
+}
+strong {
+    font-weight: 600;
+}
+.flex-c {
+    /* flex column center */
+    display: flex;
+    flex-direction: column;
+}
+.main-section {
+    align-items: center;
+    justify-content: space-evenly;
+}
+.intro-section {
+    min-height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    max-width: 144rem;
+    margin: 0rem 3rem;
+}
+.text-container {
+    text-align: center;
+    align-self: center;
+    align-items: center;
+    gap: 2rem;
+}
+.header-primary {
+    font-size: 3.8rem;
+    color: var(--verydarkblue);
+    font-weight: 200;
+}
+.summary {
+    color: var(--grayishblue);
+    font-size: 1.6rem;
+    max-width: 55ch;
+}
+.articles-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    align-items: center;
+    max-width: 120rem;
+}
+.article {
+    padding-inline: 4rem;
+    padding-block: 3rem;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 6rem;
+
+    border-radius: 0.5rem;
+    box-shadow: -0.8rem 2rem 6rem -1.5rem rgba(205, 216, 239, 0.707);
+}
+.two-article-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.article-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.secondary-header {
+    font-size: 2rem;
+    color: var(--verydarkblue);
+}
+.article-description {
+    font-size: 1.4rem;
+    color: var(--grayishblue);
+}
+.article-icon {
+    width: 6rem;
+    align-self: flex-end;
+}
+.article-one {
+    border-top: 0.4rem solid var(--cyan);
+}
+.article-two {
+    border-top: 0.4rem solid var(--red);
+}
+.article-three {
+    border-top: 0.4rem solid var(--orange);
+}
+.article-four {
+    border-top: 0.4rem solid var(--blue);
+}
+
+@media (max-width: 60em) {
+    .intro-section {
+        margin: 2rem 3rem;
+        gap: 2rem;
+    }
+    .articles-container {
+        grid-template-columns: repeat(1, 1fr);
+        align-items: flex-start;
+    }
+}
+@media (max-width: 33em) {
+    .intro-section {
+        margin: 2rem 2rem;
+        gap: 2rem;
+    }
+    .header-primary {
+        font-size: 2.8rem;
+    }
+    .summary {
+        font-size: 1.4rem;
+        margin-inline: 2rem;
+    }
+    .secondary-header {
+        font-size: 1.8rem;
+    }
+    .article-description {
+        font-size: 1.2rem;
+    }
+}
